@@ -1,0 +1,54 @@
+:root {
+    /* main palette */
+    /* --light-color:     #ffffff;
+    --dark-color:      #000000; */
+    /* --current-color:     currentColor;
+    --transparent-color: transparent; */
+    --first-color:       #d4145a;
+    --second-color:      #343a40;
+    --third-color:       #13d48d;
+    --fourth-color:      #ffffff;
+    --warning-color:     #ffc107;
+    --error-color:       #dc3545;
+
+    /* injection vars */
+    --background-color: #343a40;
+    --color:            #ffffff;
+    --color-link:       #ffffff;
+}
+
+/* reset */
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+html,
+body {
+    margin: 0;
+	overflow: hidden;
+    background-color: var(--background-color);
+    color: var(--color);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    /* line-height: 1.5; */
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  /* line-height: 1.15; */
+  margin: 0;
+}
+svg {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+}
