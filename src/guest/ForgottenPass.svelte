@@ -1,52 +1,40 @@
 <script lang="ts">
-    import { user } from '../store/store'
+    import { user, route, message } from '../store/store'
 
-    import IconNovelist from '../assets/svg/IconNovelist.svelte'
     import IconEmail from '../assets/svg/IconEmail.svelte'
-    import IconPassword from '../assets/svg/IconPassword.svelte'
     import Input from '../components/Input.svelte'
     import Button from '../components/Button.svelte'
 
-    // start tmp
-    let valueEmail: string = 'info@mobitoon.ru'
-    let valuePassword: string = '123456'
-    // end tmp
+    $: disableSignIn = /^[^ ]+@[^ ]+\.[a-z]{2,}$/.test($user.email) && $user.password ? false : true
 
+    function forgottenPass() {
+        console.log('Reset password')
 
-    let disableSignIn: boolean = false
-    
-    $: disableSignIn = /\S+@\S+\.\S+/.test(valueEmail) && valuePassword ? false : true
+        $message.status = 'info'
+        $message.text = `Password recovery link is sent to your email address - <a href="mailto://${$user.email}">${$user.email}</a>. Follow the link to get temporary password.`
+        $message.routeout = 'signin'
+        $route = 'message'
+    }
 </script>
 
 <section>
     <div class="inform">
-        <div class="logo">
-            <IconNovelist/>
-        </div>
-        <div>Book your mind</div>
-        <div>to flying high!</div>
+        To reset a password for your account, you have to enter the email to which the account is linked.
     </div>
     <div class="input-em">
-        <Input bind:value={valueEmail} type="email" placeholder="Email">
+        <Input bind:value={$user.email} type="email" placeholder="Email" class={/^[^ ]+@[^ ]+\.[a-z]{2,}$/.test($user.email) || !$user.email.length ? '' : 'invalid'}>
             <IconEmail/>
         </Input>
     </div>
-    <div class="input-pw">
-        <Input bind:value={valuePassword} type="password" placeholder="Password">
-            <IconPassword/>
-        </Input>
-    </div>
-    <div class="errors">
-        <!-- error message -->&nbsp;
-    </div>
-    <div class="button-fp">
-        <Button class="link block" on:click={() => console.log('Forgotten pass?')}>Forgotten pass?</Button>
-    </div>
+    <div class="errors"></div>
     <div class="button-su">
-        <Button class="third link block" on:click={() => console.log('Sign Up')}>Sign Up</Button>
+        <Button class="third link block" on:click={() => $route = 'signup'}>Sign Up</Button>
     </div>
     <div class="button-si">
-        <Button class="fourth block round" on:click={() => $user.signedIn = true} disabled={disableSignIn}>Sign In</Button>
+        <Button class="link block" on:click={() => $route = 'signin'}>Sign In</Button>
+    </div>
+    <div class="button-fp">
+        <Button class="fourth block round" on:click={forgottenPass} disabled={disableSignIn}>Reset password</Button>
     </div>
 </section>
 
@@ -57,37 +45,31 @@
         grid-column: 1/2
         grid-row: 1/2
         display: grid
-        grid-template-rows: auto repeat(5, min-content)
+        grid-template-rows: auto repeat(4, min-content)
         grid-template-columns: auto auto
-        grid-template-areas: "inform inform" "input-em input-em" "input-pw input-pw" "errors errors" "button-fp button-su" "button-si button-si"
+        grid-template-areas: "inform inform" "input-em input-em" "errors errors" "button-su button-si" "button-fp button-fp"
         grid-gap: $grid-gap
         justify-self: center
-        // justify-items: center
         width: $media-breakpoint-lk
         .inform
             grid-area: inform
-            // justify-self: center
             align-self: center
-            text-align: center
-            font-size: 1.5rem
             font-weight: lighter
-            line-height: 1.2
-            text-transform: uppercase
-            .logo
-                margin-left: auto
-                margin-right: auto
-                width: $icon-lg
+            hyphens: auto
+            :global(a)
+                color: var(--color-link)
         .input-em
             grid-area: input-em
-        .input-pw
-            grid-area: input-pw
         .errors
             grid-area: errors
-        .button-fp
-            grid-area: button-fp
+            height: $err-height
+            text-align: center
+            color: var(--error-color)
+            overflow: hidden
         .button-su
             grid-area: button-su
         .button-si
             grid-area: button-si
-
+        .button-fp
+            grid-area: button-fp
 </style>

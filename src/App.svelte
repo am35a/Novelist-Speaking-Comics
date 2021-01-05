@@ -2,9 +2,10 @@
 	import { user, route } from './store/store'
 
 	import Menu from './components/Menu.svelte'
-	import Error from './components/Error.svelte'
 	import SignIn from './guest/SignIn.svelte'
 	import SignUp from './guest/SignUp.svelte'
+	import ForgottenPass from './guest/ForgottenPass.svelte'
+	import Message from './guest/Message.svelte'
 
 	let inverseColors: boolean = false;
 </script>
@@ -30,8 +31,12 @@
 			<SignIn/>
 		{:else if $route === 'signup'}
 			<SignUp/>
+		{:else if $route === 'message'}
+			<Message/>
+		{:else if $route === 'forgottenpass'}
+			<ForgottenPass/>
 		{:else}
-			<Error/>
+			<Message status={'error'} text={'Something went wrong...'} routeout={'signin'}/>
 		{/if}
 	{/if}
 	<Menu/>

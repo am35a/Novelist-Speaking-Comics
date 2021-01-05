@@ -60,7 +60,8 @@
         .item
             width: $menu-item-width
             height: $menu-item-height
-            padding: $menu-item-padding
+            > :global(button)
+                padding: $menu-item-padding
         .devider
             flex: 1 1 auto
 

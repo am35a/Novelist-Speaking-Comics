@@ -31,8 +31,10 @@
             text-align: center
             outline-style: none
             &:valid ~ .error
+            &:not(.invalid) ~ .error
                 opacity: 0
-            &:invalid
+            &:invalid,
+            &.invalid
                 color: var(--warning-color)
                 ~ .underline
                     background-color: var(--warning-color)

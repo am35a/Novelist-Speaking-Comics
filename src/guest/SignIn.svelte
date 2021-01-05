@@ -7,20 +7,23 @@
     import Input from '../components/Input.svelte'
     import Button from '../components/Button.svelte'
 
-    // start tmp
-    let valueEmail: string = 'info@mobitoon.ru'
-    let valuePassword: string = '123456'
-    // end tmp
+    let errorMessage: string = ''
+   
+    $: disableSignIn = /^[^ ]+@[^ ]+\.[a-z]{2,}$/.test($user.email) && $user.password ? false : true
 
     function signIn() {
         console.log('Sign In')
 
-        $user.signedIn = true
+        // start simulation
+        if($user.email === 'info@mobitoon.ru' && $user.password === '123456') {
+            $user.signedIn = true
+            errorMessage = ''
+        } else {
+            $user.signedIn = false
+            errorMessage = 'Wrong email or password'
+        }
+        // end simulation
     }
-
-    let disableSignIn: boolean = false
-    
-    $: disableSignIn = /\S+@\S+\.\S+/.test(valueEmail) && valuePassword ? false : true
 </script>
 
 <section>
@@ -32,17 +35,17 @@
         <div>to flying high!</div>
     </div>
     <div class="input-em">
-        <Input bind:value={valueEmail} type="email" placeholder="Email">
+        <Input bind:value={$user.email} type="email" placeholder="Email" class={/^[^ ]+@[^ ]+\.[a-z]{2,}$/.test($user.email) || !$user.email.length ? '' : 'invalid'}>
             <IconEmail/>
         </Input>
     </div>
     <div class="input-pw">
-        <Input bind:value={valuePassword} type="password" placeholder="Password">
+        <Input bind:value={$user.password} type="password" placeholder="Password">
             <IconPassword/>
         </Input>
     </div>
     <div class="errors">
-        <!-- error message -->&nbsp;
+        {errorMessage}
     </div>
     <div class="button-fp">
         <Button class="link block" on:click={() => $route = 'forgottenpass'}>Forgotten pass?</Button>
@@ -88,11 +91,14 @@
             grid-area: input-pw
         .errors
             grid-area: errors
+            height: $err-height
+            text-align: center
+            color: var(--error-color)
+            overflow: hidden
         .button-fp
             grid-area: button-fp
         .button-su
             grid-area: button-su
         .button-si
             grid-area: button-si
-
 </style>

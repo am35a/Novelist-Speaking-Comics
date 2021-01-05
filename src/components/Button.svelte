@@ -6,16 +6,13 @@
     @import ../src/assets/sass/variables
     
     button
-        min-width: $btn-min-width
         width: $btn-width
         max-width: 100%
-        min-height: $btn-min-height
         height: $btn-height
         max-height: 100%
         display: inline-flex
         justify-content: center
         align-items: center
-
         padding: $btn-padding
         border: $btn-border
         background-clip: padding-box
