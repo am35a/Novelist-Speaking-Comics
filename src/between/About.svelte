@@ -52,5 +52,4 @@
             color: var(--error-color)
         .button-rb
             grid-area: button-rb
-
 </style>

@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { user, route } from './store/store'
 
-	import Menu from './components/Menu.svelte'
+	import Menu from './between/Menu.svelte'
 	import SignIn from './guest/SignIn.svelte'
 	import SignUp from './guest/SignUp.svelte'
 	import ForgottenPass from './guest/ForgottenPass.svelte'
-	import Message from './guest/Message.svelte'
+	import Message from './between/Message.svelte'
 
 	let inverseColors: boolean = false;
 </script>

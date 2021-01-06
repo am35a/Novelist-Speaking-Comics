@@ -1,15 +1,14 @@
 <script lang="ts">
-    import { user } from '../store/store'
+    import { user, route, router } from '../store/store'
 
     import IconNovelist from '../assets/svg/IconNovelist.svelte'
-    import IconHelp from '../assets/svg/IconHelp.svelte'
-    import IconAccount from '../assets/svg/IconAccount.svelte'
-    import IconFilter from '../assets/svg/IconFilter.svelte'
-    import IconList from '../assets/svg/IconList.svelte'
+    import IconHelp     from '../assets/svg/IconHelp.svelte'
+    import IconAccount  from '../assets/svg/IconAccount.svelte'
+    import IconFilter   from '../assets/svg/IconFilter.svelte'
+    import IconList     from '../assets/svg/IconList.svelte'
     
-    import Button from './Button.svelte'
+    import Button from '../components/Button.svelte'
 
-    // export let guest: boolean = true
 </script>
 
 <section>
@@ -37,13 +36,13 @@
         </div>
     {:else}
         <div class="item">
-            <Button on:click={() => console.log('Novelist about')}>
+            <Button on:click={() => $router.back()} disabled={$route === 'about'}>
                 <IconNovelist/>
             </Button>
         </div>
         <div class="devider"></div>
         <div class="item">
-            <Button on:click={() => console.log('Help')}>
+            <Button on:click={() => $router.goto('help')} disabled={$route === 'help'}>
                 <IconHelp/>
             </Button>
         </div>
