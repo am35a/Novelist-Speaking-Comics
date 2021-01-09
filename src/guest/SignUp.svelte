@@ -1,5 +1,6 @@
 <script lang="ts">
-    import { user, route, message } from '../store/store'
+    import { route } from '../store/route'
+    import { user, message } from '../store/store'
 
     import IconEmail from '../assets/svg/IconEmail.svelte'
     import Input from '../components/Input.svelte'
@@ -13,7 +14,7 @@
         $message.status = 'info'
         $message.text = `The confirmation link is sent to your email address - <a href="mailto://${$user.email}">${$user.email}</a>. Follow the link to complete the registration.`
         $message.routeout = 'signin'
-        $route = 'message'
+        route.goto('message')
     }
 </script>
 
@@ -28,10 +29,10 @@
     </div>
     <div class="errors"></div>
     <div class="button-si">
-        <Button class="link block" on:click={() => $route = 'signin'}>Sign In</Button>
+        <Button class="link block" on:click={() => route.goto('signin')}>Sign In</Button>
     </div>
     <div class="button-fp">
-        <Button class="link block" on:click={() => $route = 'forgottenpass'}>Forgotten pass?</Button>
+        <Button class="link block" on:click={() => route.goto('forgottenpass')}>Forgotten pass?</Button>
     </div>
     <div class="button-su">
         <Button class="third block round" on:click={signUp} disabled={disableSignIn}>Sign Up</Button>

@@ -1,11 +1,12 @@
 <script lang="ts">
-	import { user, route } from './store/store'
+	import { route } from './store/route'
+	import { user } from './store/store'
 
-	import Menu from './between/Menu.svelte'
-	import SignIn from './guest/SignIn.svelte'
-	import SignUp from './guest/SignUp.svelte'
+	import Menu			 from './between/Menu.svelte'
+	import Message 		 from './between/Message.svelte'
+	import SignIn		 from './guest/SignIn.svelte'
+	import SignUp 		 from './guest/SignUp.svelte'
 	import ForgottenPass from './guest/ForgottenPass.svelte'
-	import Message from './between/Message.svelte'
 
 	let inverseColors: boolean = false;
 </script>
@@ -27,13 +28,13 @@
 			list of comicses
 		</div>
 	{:else}
-		{#if $route === 'signin'}
+		{#if $route.current === 'signin'}
 			<SignIn/>
-		{:else if $route === 'signup'}
+		{:else if $route.current === 'signup'}
 			<SignUp/>
-		{:else if $route === 'message'}
+		{:else if $route.current === 'message'}
 			<Message/>
-		{:else if $route === 'forgottenpass'}
+		{:else if $route.current === 'forgottenpass'}
 			<ForgottenPass/>
 		{:else}
 			<Message status={'error'} text={'Something went wrong...'} routeout={'signin'}/>

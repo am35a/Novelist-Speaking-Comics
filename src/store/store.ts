@@ -9,29 +9,6 @@ export let user: any = writable(
     }
 )
 
-export let route: any = writable('signin')
-
-export let router: any = writable(
-    {
-        goto: function (route: string) {
-            if(this.current() !== route)
-                this.history.push(route)
-            console.log(this.history)
-        },
-        back: function () {
-            this.history.pop()
-            console.log(this.history)
-        },
-        current: function() {
-            return this.history.length ? this.history[this.history.length - 1] : false
-        },
-        history: []
-    }
-)
-// export function changeRoute(newRoute: string) {
-//     route = (newRoute !== 'signin' && newRoute !== 'signup' && newRoute !== 'forgottenpass') ? newRoute : 'signin'
-// }
-
 export let message: any = writable(
     {
         status: 'info' as string,

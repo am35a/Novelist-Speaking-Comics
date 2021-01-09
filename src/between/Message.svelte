@@ -1,5 +1,6 @@
 <script lang="ts">
-    import { user, route, message } from '../store/store'
+    import { route } from '../store/route'
+    import { user, message } from '../store/store'
     import Button from '../components/Button.svelte'
 
     export let status: string = $message.status
@@ -11,7 +12,7 @@
 
         if (status === 'error')
             $user.signedIn = false
-        $route = routeout
+        route.goto(routeout)
     }
 </script>
 

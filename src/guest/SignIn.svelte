@@ -1,5 +1,6 @@
 <script lang="ts">
-    import { user, route } from '../store/store'
+    import { route } from '../store/route'
+    import { user } from '../store/store'
 
     import IconNovelist from '../assets/svg/IconNovelist.svelte'
     import IconEmail from '../assets/svg/IconEmail.svelte'
@@ -48,10 +49,10 @@
         {errorMessage}
     </div>
     <div class="button-fp">
-        <Button class="link block" on:click={() => $route = 'forgottenpass'}>Forgotten pass?</Button>
+        <Button class="link block" on:click={() => route.goto('forgottenpass')}>Forgotten pass?</Button>
     </div>
     <div class="button-su">
-        <Button class="third link block" on:click={() => $route = 'signup'}>Sign Up</Button>
+        <Button class="third link block" on:click={() => route.goto('signup')}>Sign Up</Button>
     </div>
     <div class="button-si">
         <Button class="fourth block round" on:click={signIn} disabled={disableSignIn}>Sign In</Button>

@@ -1,5 +1,6 @@
 <script lang="ts">
-    import { user, route, router } from '../store/store'
+    import { route } from '../store/route'
+    import { user } from '../store/store'
 
     import IconNovelist from '../assets/svg/IconNovelist.svelte'
     import IconHelp     from '../assets/svg/IconHelp.svelte'
@@ -8,7 +9,6 @@
     import IconList     from '../assets/svg/IconList.svelte'
     
     import Button from '../components/Button.svelte'
-
 </script>
 
 <section>
@@ -36,13 +36,13 @@
         </div>
     {:else}
         <div class="item">
-            <Button on:click={() => $router.back()} disabled={$route === 'about'}>
+            <Button on:click={() => route.back()} disabled={$route.current === 'about'}>
                 <IconNovelist/>
             </Button>
         </div>
         <div class="devider"></div>
         <div class="item">
-            <Button on:click={() => $router.goto('help')} disabled={$route === 'help'}>
+            <Button on:click={() => route.goto('help')} disabled={$route.current === 'help'}>
                 <IconHelp/>
             </Button>
         </div>
