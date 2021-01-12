@@ -43,8 +43,6 @@
     @import ../src/assets/sass/variables
 
     section
-        grid-column: 1/2
-        grid-row: 1/2
         display: grid
         grid-template-rows: auto repeat(4, min-content)
         grid-template-columns: auto auto

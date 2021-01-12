@@ -4,11 +4,8 @@
 </script>
 
 <section>
-    <div class="about">
-        <p>
-            <img src="http://mobitoon.ru/novelist/images/logo/logoname.svg" alt="Novelist">
-        </p>
-        &copy;2021 <a class="m-2 text-uppercase text-decoration-none" href="http://noveli.st" target="_blank">www.noveli.st</a> TX USA
+    <div class="help">
+        Help content coming soon
     </div>
     <div class="button-rb">
         <Button class="fourth block round" on:click={() => route.back()}>Close</Button>
@@ -25,12 +22,11 @@
         grid-gap: $grid-gap
         justify-self: center
         width: $media-breakpoint-lk
-        .about
+        .help
             grid-area: error
             align-self: center
             font-weight: lighter
-            text-align: center
-            text-transform: uppercase
+            hyphens: auto
             :global(a)
                 color: var(--color-link)
         .button-rb

@@ -3,18 +3,21 @@
 	import { user } from './store/store'
 
 	import Menu			 from './between/Menu.svelte'
+	import Help 		 from './between/Help.svelte'
+	import About 		 from './between/About.svelte'
 	import Message 		 from './between/Message.svelte'
 	import SignIn		 from './guest/SignIn.svelte'
 	import SignUp 		 from './guest/SignUp.svelte'
 	import ForgottenPass from './guest/ForgottenPass.svelte'
+	import List			 from './signed/List.svelte'
+
+	// import { onMount } from 'svelte'
+	// onMount(async () => {
+	// 	//...
+	// });
 
 	let inverseColors: boolean = false;
 </script>
-
-<!--
-	https://github.com/sveltejs/gestures
-	https://svelte.dev/repl/ffbdb659f2c52c8510bec42af3ffb0d1?version=3.0.0-beta.10
--->
 
 <svelte:head>
 	{#if inverseColors}
@@ -23,24 +26,24 @@
 </svelte:head>
 
 <main>
-	{#if $user.signedIn}
-		<div>
-			list of comicses
-		</div>
+	{#if $route.current === 'signin' && !$user.signedIn}
+		<SignIn />
+	{:else if $route.current === 'signup' && !$user.signedIn}
+		<SignUp />
+	{:else if $route.current === 'forgottenpass' && !$user.signedIn}
+		<ForgottenPass />
+	{:else if $route.current === 'list' && $user.signedIn}
+		<List />
+	{:else if $route.current === 'help'}
+		<Help />
+	{:else if $route.current === 'about'}
+		<About />
+	{:else if $route.current === 'message'}
+		<Message />
 	{:else}
-		{#if $route.current === 'signin'}
-			<SignIn/>
-		{:else if $route.current === 'signup'}
-			<SignUp/>
-		{:else if $route.current === 'message'}
-			<Message/>
-		{:else if $route.current === 'forgottenpass'}
-			<ForgottenPass/>
-		{:else}
-			<Message status={'error'} text={'Something went wrong...'} routeout={'signin'}/>
-		{/if}
+		<Message status={'error'} text={'Something went wrong...'} routeout={'signin'} />
 	{/if}
-	<Menu/>
+	<Menu />
 </main>
 
 <!-- <button on:click={() => inverseColors = inverseColors === false}>
@@ -55,5 +58,12 @@
 		height: 100vh
 		display: grid
 		grid-gap: $grid-gap
+		grid-template-columns: 1fr
 		grid-template-rows: auto min-content
+		:global(> section:first-child)
+			grid-column: 1/2
+			grid-row: 1/2
+		:global(> section:last-child)
+			grid-column: 1/2
+			grid-row: 2/3
 </style>

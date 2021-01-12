@@ -46,6 +46,10 @@ export default {
 				dev: !production
 			}
 		}),
+		// sass({
+		// 	output: 'public/build/style.css',
+		// 	failOnError: true
+		// }),
 		// we'll extract any component CSS out into
 		// a separate file - better for performance
 		css({ output: 'bundle.css' }),

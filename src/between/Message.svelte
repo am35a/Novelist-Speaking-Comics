@@ -31,8 +31,6 @@
     @import ../src/assets/sass/variables
 
     section
-        grid-column: 1/2
-        grid-row: 1/2
         display: grid
         grid-template-rows: auto min-content
         grid-template-areas: "error error" "button-rb button-rb"

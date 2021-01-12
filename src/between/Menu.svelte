@@ -15,35 +15,35 @@
     {#if $user.signedIn}
         <div class="item">
             <Button on:click={() => console.log('Novelist about')}>
-                <IconNovelist/>
+                <IconNovelist />
             </Button>
         </div>
         <div class="devider"></div>
         <div class="item">
             <Button on:click={() => console.log('List')}>
-                <IconList/>
+                <IconList />
             </Button>
         </div>
         <div class="item">
             <Button on:click={() => console.log('Filter')}>
-                <IconFilter/>
+                <IconFilter />
             </Button>
         </div>
         <div class="item">
             <Button on:click={() => console.log('Account page')}>
-                <IconAccount/>
+                <IconAccount />
             </Button>
         </div>
     {:else}
         <div class="item">
-            <Button on:click={() => route.back()} disabled={$route.current === 'about'}>
-                <IconNovelist/>
+            <Button on:click={() => route.goto('about')} disabled={$route.current === 'about'}>
+                <IconNovelist />
             </Button>
         </div>
         <div class="devider"></div>
         <div class="item">
             <Button on:click={() => route.goto('help')} disabled={$route.current === 'help'}>
-                <IconHelp/>
+                <IconHelp />
             </Button>
         </div>
     {/if}
@@ -53,8 +53,6 @@
     @import ../src/assets/sass/variables
 
     section
-        grid-column: 1/2
-        grid-row: 2/3
         display: flex
         .item
             width: $menu-item-width

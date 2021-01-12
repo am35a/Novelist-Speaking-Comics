@@ -18,7 +18,8 @@
         // start simulation
         if($user.email === 'info@mobitoon.ru' && $user.password === '123456') {
             $user.signedIn = true
-            errorMessage = ''
+            route.goto('list')
+            // errorMessage = ''
         } else {
             $user.signedIn = false
             errorMessage = 'Wrong email or password'
@@ -63,8 +64,6 @@
     @import ../src/assets/sass/variables
 
     section
-        grid-column: 1/2
-        grid-row: 1/2
         display: grid
         grid-template-rows: auto repeat(5, min-content)
         grid-template-columns: auto auto
