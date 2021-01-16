@@ -1,6 +1,8 @@
 <script lang="ts">
     import { route } from '../store/route'
     import { user, message } from '../store/store'
+
+    // fundamental components
     import Button from '../components/Button.svelte'
 
     export let status: string = $message.status

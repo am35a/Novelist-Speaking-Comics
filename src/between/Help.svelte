@@ -1,5 +1,7 @@
 <script lang="ts">
     import { route } from '../store/route'
+    
+    // fundamental components
     import Button from '../components/Button.svelte'
 </script>
 

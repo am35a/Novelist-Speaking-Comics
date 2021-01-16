@@ -1,12 +1,15 @@
 <script lang="ts">
     import { route } from '../store/route'
-    import { user } from '../store/store'
+    import { user }  from '../store/store'
 
+    // svg icons
     import IconNovelist from '../assets/svg/IconNovelist.svelte'
-    import IconEmail from '../assets/svg/IconEmail.svelte'
+    import IconEmail    from '../assets/svg/IconEmail.svelte'
     import IconPassword from '../assets/svg/IconPassword.svelte'
-    import Input from '../components/Input.svelte'
+
+    // fundamental components
     import Button from '../components/Button.svelte'
+    import Input  from '../components/Input.svelte'
 
     let errorMessage: string = ''
    

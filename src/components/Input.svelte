@@ -1,6 +1,8 @@
 <script lang="ts">
+    // svg icons
     import IconClear from '../assets/svg/IconClear.svelte'
     import IconError from '../assets/svg/IconError.svelte'
+
     export let value: string = ''
 </script>
 

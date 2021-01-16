@@ -1,9 +1,11 @@
 <script lang="ts">
-    import { route } from '../store/route'
-    import Input from '../components/Input.svelte'
+    // import { route } from '../store/route'
 
+    // svg icons
     import IconSearch from '../assets/svg/IconSearch.svelte'
 
+    // fundamental components
+    import Input from '../components/Input.svelte'
 </script>
 
 <section>

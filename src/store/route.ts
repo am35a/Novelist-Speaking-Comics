@@ -7,8 +7,8 @@ function f() {
         history: ['signin'],
         current: 'signin' as string,
         // isHistory: false as boolean
-	}
-	
+    }
+    
     const { subscribe, set } = writable(data)
 
     return {
@@ -31,7 +31,7 @@ function f() {
             //     data.isHistory = false
             // set(data)
         }
-	}
+    }
 }
 
 export const route = f()

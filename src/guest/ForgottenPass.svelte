@@ -2,9 +2,12 @@
     import { route } from '../store/route'
     import { user, message } from '../store/store'
 
+    // svg icons
     import IconEmail from '../assets/svg/IconEmail.svelte'
-    import Input from '../components/Input.svelte'
+
+    // fundamental components
     import Button from '../components/Button.svelte'
+    import Input  from '../components/Input.svelte'
 
     $: disableSignIn = /^[^ ]+@[^ ]+\.[a-z]{2,}$/.test($user.email) && $user.password ? false : true
 

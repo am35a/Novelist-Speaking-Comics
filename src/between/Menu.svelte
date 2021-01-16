@@ -2,12 +2,14 @@
     import { route } from '../store/route'
     import { user } from '../store/store'
 
+    // svg icons
     import IconNovelist from '../assets/svg/IconNovelist.svelte'
     import IconHelp     from '../assets/svg/IconHelp.svelte'
     import IconAccount  from '../assets/svg/IconAccount.svelte'
     import IconFilter   from '../assets/svg/IconFilter.svelte'
     import IconList     from '../assets/svg/IconList.svelte'
     
+    // fundamental components
     import Button from '../components/Button.svelte'
 </script>
 
