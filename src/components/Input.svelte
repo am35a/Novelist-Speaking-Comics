@@ -10,8 +10,8 @@
     <input {...$$restProps} bind:value>
     <div class="underline"></div>
     <div class="placeholder"><slot></slot></div>
-    <div class="error"><IconError/></div>
-    <button class="clear" on:click={() => value = ''}><IconClear/></button>
+    <div class="error"><IconError /></div>
+    <button class="clear" on:click={() => value = ''}><IconClear /></button>
 </div>
 
 <style lang="sass">

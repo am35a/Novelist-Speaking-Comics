@@ -27,7 +27,7 @@
     </div>
     <div class="input-em">
         <Input bind:value={$user.email} type="email" placeholder="Email" class={/^[^ ]+@[^ ]+\.[a-z]{2,}$/.test($user.email) || !$user.email.length ? '' : 'invalid'}>
-            <IconEmail/>
+            <IconEmail />
         </Input>
     </div>
     <div class="errors"></div>

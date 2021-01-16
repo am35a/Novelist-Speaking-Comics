@@ -34,19 +34,19 @@
 <section>
     <div class="inform">
         <div class="logo">
-            <IconNovelist/>
+            <IconNovelist />
         </div>
         <div>Book your mind</div>
         <div>to flying high!</div>
     </div>
     <div class="input-em">
         <Input bind:value={$user.email} type="email" placeholder="Email" class={/^[^ ]+@[^ ]+\.[a-z]{2,}$/.test($user.email) || !$user.email.length ? '' : 'invalid'}>
-            <IconEmail/>
+            <IconEmail />
         </Input>
     </div>
     <div class="input-pw">
         <Input bind:value={$user.password} type="password" placeholder="Password">
-            <IconPassword/>
+            <IconPassword />
         </Input>
     </div>
     <div class="errors">
