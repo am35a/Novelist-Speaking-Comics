@@ -5,7 +5,7 @@ import { writable } from "svelte/store"
 function f() {
     let data = {
         history: ['signin'],
-        current: 'signin' as string,
+        current: 'signin' as string, //signin as default
         // isHistory: false as boolean
     }
     

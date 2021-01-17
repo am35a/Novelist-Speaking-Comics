@@ -18,8 +18,8 @@
         background-clip: padding-box
         background-color: transparent
         color: currentColor
-        font-size: 1rem
-        font-weight: 400
+        font-size: $btn-font-size
+        font-weight: $btn-font-weight
         outline: none
         appearance: none
         transition: opacity 0.25s ease-in-out

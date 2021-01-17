@@ -25,13 +25,14 @@
             grid-column: 1/2
             grid-row: 1/2
         input
-            height: $npt-height
-            padding: $key-rem / 1.5 $key-rem * 1.5 + $icon-sm
+            height: $npt-input-height
+            padding: $npt-input-padding
             background-color: transparent
             border: none
             color: currentColor
             text-align: center
             outline-style: none
+            z-index: 1
             &:valid ~ .error
             &:not(.invalid) ~ .error
                 opacity: 0
@@ -65,32 +66,27 @@
         .error
             color: var(--warning-color)
         .underline
-            margin-top: auto
+            margin: $npt-underline-margin
             height: $range-height
             background-color: var(--first-color)
             background-clip: content-box
-            padding-left: $key-rem * 1.5
-            padding-right: $key-rem * 1.5
+            padding: $npt-underline-padding
             transition: padding .25s ease-in-out
         .placeholder,
         .error
-            width: $icon-sm
-            height: $icon-sm
-            margin-left: 50%
-            margin-top: auto
-            margin-bottom: auto
-            left: 20px
+            width: $npt-placeholder-width
+            height: $npt-placeholder-height
+            left: $npt-placeholder-left
+            margin: $npt-placeholder-margin
             opacity: .8
             transition: opacity .25s ease-in-out, transform .25s ease-in-out, margin-left .25s ease-in-out
-            transform: translateX(-50%)
+            transform: $npt-placeholder-transform
         .clear
             display: inline-flex
-            width: $icon-sm
-            height: $icon-sm
-            margin-left: 100%
-            margin-top: auto
-            margin-bottom: auto
-            padding: 0
+            width: $npt-clear-width
+            height: $npt-clear-height
+            margin: $npt-clear-margin
+            padding: $npt-clear-padding
             border: none
             background-clip: padding-box
             background-color: transparent
@@ -100,6 +96,7 @@
             cursor: pointer
             opacity: .4
             transition: opacity .25s ease-in-out, margin-left .25s ease-in-out
+            z-index: 1
             &:focus,
             &:hover
                 opacity: 1
