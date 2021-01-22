@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { onMount } from 'svelte'
     import { route } from './store/route'
     import { user }  from './store/store'
 
@@ -13,10 +14,17 @@
 
     import Menu          from './between/Menu.svelte'
 
-    // import { onMount } from 'svelte'
-    // onMount(async () => {
-    // 	//...
-    // });
+
+	// let photos = [];
+
+	onMount(async () => {
+		// const res = await fetch(`https://jsonplaceholder.typicode.com/photos?_limit=20`)
+        // photos = await res.json()
+        // console.log(photos)
+
+        if ($user.settings.autoSignIn)
+            console.log(`autoSignIn = ${$user.settings.autoSignIn}`)
+	})
 
     let inverseColors: boolean = false;
 </script>

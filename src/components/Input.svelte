@@ -26,7 +26,7 @@
             grid-row: 1/2
         input
             height: $npt-input-height
-            padding: $npt-input-padding
+            padding: 0 $key-rem * 1.5 + $icon-sm
             background-color: transparent
             border: none
             color: currentColor
@@ -44,8 +44,7 @@
                 ~ .placeholder
                     opacity: 0
             &:focus ~ .underline
-                padding-left: 0
-                padding-right: 0
+                padding: 0
             &:focus:placeholder-shown ~ .placeholder,
             &:not(:placeholder-shown) ~ .placeholder,
             &:focus:placeholder-shown ~ .error,
@@ -66,27 +65,27 @@
         .error
             color: var(--warning-color)
         .underline
-            margin: $npt-underline-margin
             height: $range-height
+            margin: auto 0 0 0
+            padding: 0 $key-rem * 1.5
             background-color: var(--first-color)
             background-clip: content-box
-            padding: $npt-underline-padding
             transition: padding .25s ease-in-out
         .placeholder,
         .error
             width: $npt-placeholder-width
             height: $npt-placeholder-height
-            left: $npt-placeholder-left
-            margin: $npt-placeholder-margin
+            left: $key-rem * 2.5
+            margin: auto 0 auto 50%
             opacity: .8
             transition: opacity .25s ease-in-out, transform .25s ease-in-out, margin-left .25s ease-in-out
-            transform: $npt-placeholder-transform
+            transform: translateX(-50%)
         .clear
             display: inline-flex
             width: $npt-clear-width
             height: $npt-clear-height
-            margin: $npt-clear-margin
-            padding: $npt-clear-padding
+            margin: auto 0 auto 100%
+            padding: 0
             border: none
             background-clip: padding-box
             background-color: transparent

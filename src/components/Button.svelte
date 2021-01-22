@@ -13,13 +13,13 @@
         display: inline-flex
         justify-content: center
         align-items: center
-        padding: $btn-padding
-        border: $btn-border
+        padding: 0
+        border: none
         background-clip: padding-box
         background-color: transparent
         color: currentColor
-        font-size: $btn-font-size
-        font-weight: $btn-font-weight
+        font-size: $key-rem * 2
+        font-weight: 400
         outline: none
         appearance: none
         transition: opacity 0.25s ease-in-out

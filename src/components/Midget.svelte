@@ -20,15 +20,15 @@
     .midget
         display: inline-grid
         width: $midget-width
-        margin: $midget-margin
-        padding: $midget-padding
+        margin: $key-rem 0
+        padding: 0 $key-rem
         .author
             font-size: $font-size-small
         .title
             text-transform: uppercase
         .status
             display: grid
-            padding: $midget-status-padding
+            padding: 0 $key-rem
             height: $midget-status-height
             [class*="range-"]
                 grid-row: 1/2
