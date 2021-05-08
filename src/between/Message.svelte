@@ -12,8 +12,9 @@
     function resetBack() {
         console.log('Message action button')
 
-        if (status === 'error')
+        if (status === 'error') {
             $user.signedIn = false
+        }
         route.goto(routeout)
     }
 </script>

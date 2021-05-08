@@ -36,8 +36,10 @@
         <div class="logo">
             <IconNovelist />
         </div>
-        <div>Book your mind</div>
-        <div>to flying high!</div>
+        <div class="slogan">
+            <div>Book your mind</div>
+            <div>to flying high!</div>
+        </div>
     </div>
     <div class="input-em">
         <Input bind:value={$user.email} type="email" placeholder="Email" class={/^[^ ]+@[^ ]+\.[a-z]{2,}$/.test($user.email) || !$user.email.length ? '' : 'invalid'}>
@@ -79,15 +81,29 @@
             grid-area: inform
             // justify-self: center
             align-self: center
-            text-align: center
+            // text-align: center
             font-size: 1.5rem
             font-weight: lighter
             line-height: 1.2
             text-transform: uppercase
+            display: grid
+            grid-gap: 0.5rem
             .logo
                 margin-left: auto
                 margin-right: auto
                 width: $icon-lg
+                height: $icon-lg
+            .slogan
+                text-align: center
+            @media (orientation: landscape) and (max-height: 640px)
+                grid-template-columns: max-content auto
+                justify-content: center
+                .logo
+                    width: $icon-md
+                    height: $icon-md
+                .slogan
+                   align-self: center
+                   text-align: left
         .input-em
             grid-area: input-em
         .input-pw
