@@ -4,13 +4,13 @@
     --dark-color:      #000000; */
     /* --current-color:     currentColor;
     --transparent-color: transparent; */
-    --first-color:       #d4145a;
-    --second-color:      #343a40;
-    --third-color:       #13d48d;
-    --fourth-color:      #ffffff;
-    --info-color:        #17a2b8;
-    --warning-color:     #ffc107;
-    --error-color:       #dc3545;
+    --first-color:      #d4145a;
+    --second-color:     #343a40;
+    --third-color:      #13d48d;
+    --fourth-color:     #ffffff;
+    --info-color:       #17a2b8;
+    --warning-color:    #ffc107;
+    --error-color:      #dc3545;
 
     /* injection vars */
     --background-color: #343a40;

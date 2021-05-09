@@ -11,9 +11,9 @@
     import SignUp        from './guest/SignUp.svelte'
     import ForgottenPass from './guest/ForgottenPass.svelte'
     import List          from './signed/List.svelte'
+    import Account       from './between/Account.svelte'
 
     import Menu          from './between/Menu.svelte'
-import Account from './between/Account.svelte';
 
 
 	// let photos = [];
@@ -74,7 +74,7 @@ import Account from './between/Account.svelte';
         display: grid
         grid-gap: $grid-gap
         grid-template-columns: 1fr
-        grid-template-rows: auto min-content
+        grid-template-rows: 1fr min-content
         :global(> section:first-child)
             grid-column: 1/2
             grid-row: 1/2

@@ -1,7 +1,7 @@
 <script lang="ts">
     import { route } from '../store/route'
     import { user, message } from '../store/store'
-
+    
     // svg icons
     import IconEmail from '../assets/svg/IconEmail.svelte'
 

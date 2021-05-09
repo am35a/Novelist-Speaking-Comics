@@ -95,17 +95,17 @@
                 height: $icon-lg
             .slogan
                 text-align: center
-            @media (orientation: landscape) and (max-height: 640px)
-                grid-template-columns: max-content auto
-                justify-content: center
-                .logo
-                    width: $icon-md
-                    height: $icon-md
-                .slogan
-                   align-self: center
-                   text-align: left
-            @media (orientation: landscape) and (max-height: 420px)
-                display: none
+            // @media (orientation: landscape) and (max-height: 640px)
+            //     grid-template-columns: max-content auto
+            //     justify-content: center
+            //     .logo
+            //         width: $icon-md
+            //         height: $icon-md
+            //     .slogan
+            //        align-self: center
+            //        text-align: left
+            // @media (orientation: landscape) and (max-height: 420px)
+            //     display: none
         .input-em
             grid-area: input-em
         .input-pw

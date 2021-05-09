@@ -12,8 +12,8 @@
 </script>
 
 <section>
-    <div class="about">
-
+    <div class="content">
+        Coming soon...
     </div>
     <div class="button-so">
         <Button class="warning block round" on:click={signOut}>Sign Out</Button>
@@ -25,19 +25,24 @@
 
     section
         display: grid
-        grid-template-rows: auto min-content
-        grid-template-areas: "error error" "button-so button-so"
+        grid-template-rows: 1fr min-content
+        grid-template-areas: "content content" "button-so button-so"
         grid-gap: $grid-gap
         justify-self: center
-        width: $media-breakpoint-lk
-        .about
-            grid-area: error
+        width: 100%
+        overflow: hidden
+        // overflow-y: auto
+        .content
+            grid-area: content
+            max-height: 100%
             align-self: center
             font-weight: normal
             text-align: center
-            text-transform: uppercase
-            :global(a)
-                color: var(--color-link)
+            overflow-y: auto
+            // > *
+            //     max-width: $media-breakpoint-lk
         .button-so
             grid-area: button-so
+            width: $media-breakpoint-lk
+            justify-self: center
 </style>
