@@ -56,7 +56,7 @@
         .inform
             grid-area: inform
             align-self: center
-            font-weight: lighter
+            font-weight: normal
             hyphens: auto
             :global(a)
                 color: var(--color-link)

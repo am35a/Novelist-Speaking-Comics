@@ -3,6 +3,7 @@
     import { user } from '../store/store'
 
     // svg icons
+    import IconBack from '../assets/svg/IconBack.svelte'
     import IconNovelist from '../assets/svg/IconNovelist.svelte'
     import IconHelp     from '../assets/svg/IconHelp.svelte'
     import IconAccount  from '../assets/svg/IconAccount.svelte'
@@ -16,9 +17,15 @@
 <section>
     {#if $user.signedIn}
         <div class="item">
-            <Button on:click={() => console.log('Novelist about')}>
-                <IconNovelist />
-            </Button>
+            {#if $route.current === 'list' || $route.current === 'about'}
+                <Button on:click={() => route.goto('about')} disabled={$route.current === 'about'}>
+                    <IconNovelist />
+                </Button>
+            {:else}
+                <Button on:click={() => route.back()}>
+                    <IconBack />
+                </Button>
+            {/if}
         </div>
         <div class="devider"></div>
         <div class="item">
@@ -32,7 +39,7 @@
             </Button>
         </div>
         <div class="item">
-            <Button on:click={() => console.log('Account page')}>
+            <Button on:click={() => route.goto('account')} disabled={$route.current === 'account'}>
                 <IconAccount />
             </Button>
         </div>

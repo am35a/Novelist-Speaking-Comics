@@ -30,7 +30,7 @@
         .about
             grid-area: error
             align-self: center
-            font-weight: lighter
+            font-weight: normal
             text-align: center
             text-transform: uppercase
             :global(a)

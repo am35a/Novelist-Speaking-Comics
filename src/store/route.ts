@@ -2,6 +2,8 @@
 
 import { writable } from "svelte/store"
 
+// import { user } from './store'
+
 function f() {
     let data = {
         history: ['signin'],
@@ -19,6 +21,7 @@ function f() {
                 data.current = route
                 set(data)
             }
+            console.log(data.current)
         },
         back: () => {
             if(data.history.length > 1) {

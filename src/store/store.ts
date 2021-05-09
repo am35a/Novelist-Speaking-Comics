@@ -2,7 +2,7 @@ import { writable } from 'svelte/store'
 
 export let user: any = writable(
     {
-        signedIn: false as boolean, // false as default
+        signedIn: true as boolean, // false as default
         email: 'info@mobitoon.ru' as string,
         password: '123456' as string,
         settings: {

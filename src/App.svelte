@@ -13,6 +13,7 @@
     import List          from './signed/List.svelte'
 
     import Menu          from './between/Menu.svelte'
+import Account from './between/Account.svelte';
 
 
 	// let photos = [];
@@ -22,8 +23,10 @@
         // photos = await res.json()
         // console.log(photos)
 
-        if ($user.settings.autoSignIn)
+        if ($user.settings.autoSignIn) {
             console.log(`autoSignIn = ${$user.settings.autoSignIn}`)
+            route.goto('list')
+        }
 	})
 
     let inverseColors: boolean = false;
@@ -44,6 +47,8 @@
         <ForgottenPass />
     {:else if $route.current === 'list' && $user.signedIn}
         <List />
+    {:else if $route.current === 'account' && $user.signedIn}
+        <Account />
     {:else if $route.current === 'help'}
         <Help />
     {:else if $route.current === 'about'}

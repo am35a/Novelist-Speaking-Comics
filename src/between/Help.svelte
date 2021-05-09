@@ -6,7 +6,7 @@
 </script>
 
 <section>
-    <div class="help">
+    <div class="info">
         Help content coming soon
     </div>
     <div class="button-rb">
@@ -20,14 +20,14 @@
     section
         display: grid
         grid-template-rows: auto min-content
-        grid-template-areas: "error error" "button-rb button-rb"
+        grid-template-areas: "info info" "button-rb button-rb"
         grid-gap: $grid-gap
         justify-self: center
         width: $media-breakpoint-lk
-        .help
-            grid-area: error
+        .info
+            grid-area: info
             align-self: center
-            font-weight: lighter
+            font-weight: normal
             hyphens: auto
             :global(a)
                 color: var(--color-link)
