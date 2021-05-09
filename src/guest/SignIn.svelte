@@ -104,6 +104,8 @@
                 .slogan
                    align-self: center
                    text-align: left
+            @media (orientation: landscape) and (max-height: 420px)
+                display: none
         .input-em
             grid-area: input-em
         .input-pw

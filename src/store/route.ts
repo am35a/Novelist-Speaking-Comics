@@ -24,7 +24,10 @@ function f() {
             if(data.history.length > 1) {
                 data.history.pop()
                 data.current = data.history[data.history.length - 1]
-                set(data)
+                if(data.current === 'about' || data.current === 'help')
+                    route.back()
+                else
+                    set(data)
                 // data.isHistory = true
             }
             // else
