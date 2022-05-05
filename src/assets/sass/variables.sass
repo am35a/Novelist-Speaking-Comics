@@ -1,3 +1,5 @@
+@use "sass:math"
+
 //                GLOBAL
 
 $key-rem:                       0.5rem    // equal 8px
@@ -19,7 +21,7 @@ $font-size-small:               75%
 // button
 $btn-width:                     auto
 $btn-height:                    $key-rem * 5
-$btn-radius:                    $btn-height / 2
+$btn-radius:                    math.div($btn-height, 2)
 
 // .input
 $npt-height:                    $key-rem * 5
@@ -37,7 +39,7 @@ $npt-clear-height:              $icon-sm
 $menu-height:                   $key-rem * 5
 $menu-item-width:               $menu-height
 $menu-item-height:              $menu-height
-$menu-item-padding:             $key-rem / 2
+$menu-item-padding:             math.div($key-rem, 2)
 
 // list
 $items-padding:                 $key-rem * 6 0 0 0
@@ -47,7 +49,7 @@ $midget-width:                  100%
 // - status
 $midget-status-height:          $key-rem * 2
 // -- range
-$midget-status-range-height:    $key-rem / 4
+$midget-status-range-height:    math.div($key-rem, 4)
 // - thumb
 $midget-thumb-height:           $key-rem * 10
 // -- img
@@ -60,7 +62,7 @@ $err-height:                    $key-rem * 5
 
 // --rate-height      calc(var(--key-rem) * 5);
 // --btn-height       calc(var(--key-rem) * 5);
-$range-height:                  $key-rem / 4
+$range-height:                  math.div($key-rem, 4)
 
 
 /* landscape and keybord - equal 320px */

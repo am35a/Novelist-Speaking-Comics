@@ -33,7 +33,7 @@
             text-align: center
             outline-style: none
             z-index: 1
-            &:valid ~ .error
+            &:valid ~ .error,
             &:not(.invalid) ~ .error
                 opacity: 0
             &:invalid,
